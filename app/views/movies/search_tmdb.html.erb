@@ -25,6 +25,12 @@
   <%= submit_tag 'Search', id: 'tmdb_submit', class: "btn btn-warning col-2" %>
   
   <%= link_to 'Back to movie list', movies_path, class: "btn btn-primary col-2" %>
-
+  
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %> alert-dismissible fade show" role="alert">
+      <%= value %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  <% end %>
 <% end %>
 </div>
